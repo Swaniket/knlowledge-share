@@ -1,5 +1,6 @@
 {
-  "name": "ks-ui",
+  "name": "ui",
+  "description": "UI for KnowledgeShare",
   "private": true,
   "version": "0.0.0",
   "type": "module",
