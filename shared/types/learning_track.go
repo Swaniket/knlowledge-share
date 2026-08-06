@@ -3,18 +3,19 @@ package types
 import "time"
 
 type LearningTrack struct {
-	ID                           string
-	Title                        string
-	Description                  string
-	ThumbnailPath                string // COS path
-	TrackOwner                   *User
-	VideoIds                     []string
-	QuizIds                      []string
-	RequiredQuizIds              []string
-	ContentOrder                 []string // Represents the order of video and quiz in the learning track
-	EstimatedDurationToCompleted time.Time
-	TotalEnrolled                int64
-	AvgRating                    float64
+	ID                          string
+	Title                       string
+	Description                 string
+	ThumbnailPath               string // COS path
+	TrackOwner                  *User
+	VideoIds                    []string
+	QuizIds                     []string
+	RequiredQuizIds             []string
+	ContentOrder                []string // Represents the order of video and quiz in the learning track
+	EstimatedDurationToComplete time.Time
+	TotalEnrolled               int64
+	AvgRating                   float64
+	Tags                        []string
 }
 
 type LearningTrackStatus struct {
