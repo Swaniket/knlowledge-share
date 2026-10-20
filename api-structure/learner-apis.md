@@ -1,8 +1,11 @@
-# API Lists
-
 ## Learner APIs
 
+### Get data to populate users dashboard
 > GET /v1/learner/dashboard
+
+
+
+
 
 ### Will fetch all of the learning paths available
 > GET /v1/learner/all-learning-paths
@@ -47,7 +50,10 @@ Response:
 
 
 ### Fetches details the learnings for current logged in user
-> GET /v1/learner/my-learnings
+
+> Needed for `MyLearnings` page; list down user's current learnings
+
+GET `/v1/learner/my-learnings`
 
 Response:
 ```
@@ -79,7 +85,38 @@ Response:
 
 
 ### Learning Page API
-> GET /v1/learner/learning
+
+> This will fetch the learning track detail with the video playback capibility
+
+GET: `/v1/learner/video?videoId=123`
+
+Response:
+
+```
+{
+    id: 123
+    title: "Video title"
+    description: "Video description"
+    duration: 82718 // In secs
+    videoRequired: true // [true / false]
+    hasResources: true // [true / false]
+    files: [
+
+    ],
+    videoStatus: {
+        id: 1,
+        videoId: 123,
+        status: "In Progress" // Not started / In Progress / Completed
+        lastViewedDuration: 8218 // In secs
+        trackStatusId: xyz
+    }
+}
+```
+
+
+> Stream video
+
+GET: `/v1/learner/video/:videoId/playback/:segment`
 
 
 ### Fetches details about logged in user's learning path
@@ -115,6 +152,5 @@ Response:
 ```
 
 
-## Creator APIs
 
-## Admin APIs 
+
